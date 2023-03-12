@@ -19,12 +19,14 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
+wss.on('listening' , () => console.log('Websocket listening on port 8080'));
 wss.on('connection', function connection(ws) {
+  console.log('New connection')
   clients.push(ws);
   ws.on('message', function incoming(message) {
     message = JSON.parse(message);
     if(message.sensor === 'motion' && message.value === true) {
-      console.log('motion detected');
+      console.log('Motion detected');
       clients.forEach(function each(client) {
         const newmessage = {
           type : 'wildlife',
