@@ -42,9 +42,7 @@ wss.on('connection', function connection(ws) {
       clients.forEach(function each(client) {
         const newmessage = {
           type : 'fire',
-          data : {
-            animal : 'bear',
-          }
+          data : {}
         }
         client.send(JSON.stringify(newmessage));
       });
