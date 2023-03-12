@@ -37,8 +37,9 @@ wss.on('connection', function connection(ws) {
         client.send(JSON.stringify(newmessage));
       });
     } 
-    else 
+    else if(message.sensor === 'fire' && message.value === true) {
     {
+      console.log('Fire detected');
       clients.forEach(function each(client) {
         const newmessage = {
           type : 'fire',
