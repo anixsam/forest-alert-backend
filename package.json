@@ -1,0 +1,16 @@
+{
+  "name": "forest-alert-backend",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "dev": "nodemon ./bin/www"
+  },
+  "dependencies": {
+    "express": "~4.16.1",
+    "ws": "^8.12.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
